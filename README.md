@@ -8,7 +8,7 @@ This project demonstrates a simple yet powerful chat application that interacts 
 
 ## ✨ Features
 
-- **Gemini AI Integration**: Leverages the `gemini-1.5-flash-latest` model via the `@google/generative-ai` SDK for intelligent chat responses.
+- **Gemini AI Integration**: Leverages the `gemini-2.0-flash` model via the `@google/generative-ai` SDK for intelligent chat responses.
 - **Customizable System Prompt**: Easily define the chatbot's personality and behavior through a system instruction.
 - **Google-Inspired UI**: Modern and clean interface styled with Tailwind CSS, using Google's color palette and fonts (Roboto, Google Sans).
 - **Light/Dark Mode Toggle**: Users can switch between light, dark, or system-preferred themes using `next-themes`.
@@ -40,13 +40,14 @@ Follow these instructions to get a copy of the project up and running on your lo
 
 1.  **Clone the repository (or download the source code):**
     ```bash
-    git clone <your-repository-url>
-    cd <repository-name>
+    git clone https://github.com/byigitt/google-hackathon-presentation-demo.git
+    cd google-hackathon-presentation-demo
     ```
 
 2.  **Install dependencies:**
     ```bash
     pnpm install
+    npm install # if you don't have pnpm installed
     ```
 
 3.  **Set up your Environment Variables:**
@@ -150,5 +151,3 @@ Distributed under the MIT License. See `LICENSE` file for more information (thou
 - The creators of `next-themes` and Tailwind CSS.
 
 ---
-
-*This README was generated with assistance from an AI coding partner.*
