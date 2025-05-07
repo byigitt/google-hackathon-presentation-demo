@@ -111,7 +111,6 @@ export default function ChatPage() {
   return (
     <div className="flex flex-col items-center justify-center min-h-screen p-4" style={{ backgroundColor: 'var(--page-bg)' }}>
       <div className="w-full max-w-2xl bg-white elevation-2 rounded-lg flex flex-col h-[80vh] sm:h-[85vh] md:h-[calc(100vh-100px)]" style={{ backgroundColor: 'var(--chat-container-bg)' }}>
-        {/* Header with Google-style branding */}
         <header className="p-4 border-b flex items-center justify-between" style={{ 
           backgroundColor: 'var(--chat-header-bg)', 
           borderColor: 'var(--chat-header-border)', 
@@ -124,10 +123,8 @@ export default function ChatPage() {
           <ThemeToggleButton />
         </header>
 
-        {/* Google rainbow gradient line below header */}
         <div className="google-gradient h-[3px]"></div>
 
-        {/* Chat container */}
         <div className="flex-grow p-6 space-y-4 overflow-y-auto" style={{ backgroundColor: 'var(--chat-bg)' }}>
           {chatHistory.length === 0 && (
             <div className="flex flex-col items-center justify-center h-full text-center">
@@ -200,7 +197,6 @@ export default function ChatPage() {
           )}
         </div>
 
-        {/* Input area */}
         <form onSubmit={handleSubmit} className="p-4 border-t" style={{ borderColor: 'var(--chat-header-border)' }}>
           <div className="flex items-center space-x-3">
             <input
@@ -233,7 +229,6 @@ export default function ChatPage() {
         </form>
       </div>
       
-      {/* Footer with Google branding */}
       <footer className="text-center mt-4 text-xs" style={{ color: 'var(--google-grey-700)' }}>
         <p className="mb-1">Gemini AI Hackathon Demo</p>
         <div className="text-[10px] flex justify-center items-center gap-2">
