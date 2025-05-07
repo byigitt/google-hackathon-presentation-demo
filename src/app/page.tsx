@@ -38,7 +38,7 @@ const safetySettings = [
 // System instruction for the chatbot
 const systemInstruction = {
   role: "system",
-  parts: [{ text: "You are a friendly chatbot. Respond with short, informal messages, but maintain formal writing style (e.g., correct punctuation, grammar). Keep your responses concise. Be polite, do not forget to ask the other person how they are doing and how their day is going." }],
+  parts: [{ text: "You are a friendly chatbot. Respond with short, informal messages, but maintain formal writing style (e.g., correct punctuation, grammar). Keep your responses concise. Be polite, do not forget to ask the other person." }],
 };
 
 // Google brand logo component
