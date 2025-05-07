@@ -18,7 +18,7 @@ This project demonstrates a simple yet powerful chat application that interacts 
 
 ## 🚀 Tech Stack
 
-- **Framework**: [Next.js](https://nextjs.org/) (v15+ with Pages Router)
+- **Framework**: [Next.js](https://nextjs.org/) (v15+ with App Router)
 - **Language**: [TypeScript](https://www.typescriptlang.org/)
 - **AI**: [Google Gemini API](https://ai.google.dev/)
 - **Styling**: [Tailwind CSS](https://tailwindcss.com/)
