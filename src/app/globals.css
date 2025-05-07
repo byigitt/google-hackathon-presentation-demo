@@ -1,0 +1,204 @@
+@import url('https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;700&family=Roboto:wght@300;400;500;700&display=swap');
+@import "tailwindcss";
+
+:root {
+  /* Default Light Theme Variables */
+  --background: #ffffff;
+  --foreground: #202124;
+
+  --google-blue: #4285F4;
+  --google-red: #EA4335;
+  --google-yellow: #FBBC05;
+  --google-green: #34A853;
+  --google-grey-100: #f8f9fa;
+  --google-grey-200: #f1f3f4;
+  --google-grey-300: #e8eaed;
+  --google-grey-500: #9aa0a6;
+  --google-grey-700: #5f6368;
+  --google-grey-900: #202124;
+
+  --chat-bg: #ffffff;
+  --chat-container-bg: #ffffff;
+  --chat-header-bg: #ffffff;
+  --chat-header-text: var(--google-grey-900);
+  --chat-header-border: var(--google-grey-300);
+  --user-bubble-bg: #e6f4ea; /* Light green, derived from Google Green */
+  --user-bubble-text: #202124;
+  --user-bubble-border: #ceead6;
+  --model-bubble-bg: #f1f3f4; /* Google Grey 200 */
+  --model-bubble-text: #202124;
+  --model-bubble-border: #dadce0;
+  --button-bg: var(--google-blue);
+  --button-text: #ffffff;
+  --input-bg: #f1f3f4;
+  --input-border: transparent; /* Or var(--google-grey-300) for a visible border */
+  --input-text: var(--google-grey-900);
+  --input-focus-ring: var(--google-blue);
+  --input-focus-bg: #ffffff;
+  --input-focus-border: #dadce0; /* Google Grey 300 */
+  --error-bg: #fce8e6;
+  --error-text: var(--google-red);
+  --page-bg: #f8f9fa; /* Google Grey 100 for overall page background */
+}
+
+html.dark {
+  /* Dark Theme Variables */
+  --background: #202124;
+  --foreground: #e8eaed;
+
+  /* Adjusted Google colors for dark mode if needed, or use the same ones */
+  /* --google-blue: #8ab4f8; (Example if you want lighter blue in dark mode) */
+  /* Keep core brand colors consistent unless a dark-theme variant is specified */
+
+  --chat-bg: #202124; /* Darker background for chat area */
+  --chat-container-bg: #292a2d; /* Slightly different dark shade for the main chat box */
+  --chat-header-bg: #292a2d;
+  --chat-header-text: #e8eaed;
+  --chat-header-border: #3c4043; /* Darker border */
+  --user-bubble-bg: #1e3a29; /* Darker green for user bubble */
+  --user-bubble-text: #e8eaed;
+  --user-bubble-border: #194520; /* Even darker green border */
+  --model-bubble-bg: #3c4043; /* Darker grey for model bubble */
+  --model-bubble-text: #e8eaed;
+  --model-bubble-border: #5f6368;
+  /* --button-bg: var(--google-blue); /* Button color can remain same or use a dark variant */
+  /* --button-text: #ffffff; */
+  --input-bg: #3c4043; /* Dark input background */
+  --input-border: transparent; /* Or var(--google-grey-700) for dark border */
+  --input-text: #e8eaed;
+  /* --input-focus-ring: var(--google-blue); */
+  --input-focus-bg: #3c4043; /* Keep it same or slightly lighter for focus */
+  --input-focus-border: #5f6368; /* Darker focus border */
+  --error-bg: #3d2726; /* Darker red background for errors */
+  --error-text: #f28b82; /* Lighter red text for errors in dark mode */
+  --page-bg: #202124; /* Main page background for dark mode */
+
+  /* Re-declare Google brand colors if you have dark-mode specific versions */
+  /* These are illustrative if you decide to change them for dark mode */
+  /* If not, they will be inherited from :root if not overridden here */
+  --google-blue: #8ab4f8;
+  --google-red: #f28b82;
+  --google-yellow: #fdd663;
+  --google-green: #81c995;
+  --google-grey-100: #3c4043;
+  --google-grey-200: #303134;
+  --google-grey-300: #5f6368;
+  --google-grey-500: #9aa0a6;
+  --google-grey-700: #bdc1c6;
+  --google-grey-900: #e8eaed;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: 'Google Sans', 'Roboto', sans-serif;
+  --font-mono: 'Roboto Mono', monospace;
+}
+
+body {
+  background: var(--page-bg);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  font-size: 14px;
+  line-height: 1.5;
+  margin: 0;
+  padding: 0;
+}
+
+/* Google-style button */
+.google-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Google Sans', 'Roboto', sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  letter-spacing: 0.25px;
+  height: 36px;
+  min-width: 64px;
+  padding: 0 16px;
+  border-radius: 4px;
+  transition: box-shadow 0.15s ease, background-color 0.15s ease;
+}
+
+.google-button-filled {
+  background-color: var(--button-bg);
+  color: var(--button-text);
+  border: none;
+}
+
+.google-button-filled:hover {
+  box-shadow: 0 1px 2px 0 rgba(60, 64, 67, 0.3), 0 1px 3px 1px rgba(60, 64, 67, 0.15);
+}
+
+.google-button-filled:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(66, 133, 244, 0.4);
+}
+
+.google-button-filled:active {
+  background-color: #3367d6;
+}
+
+/* Google-style input */
+.google-input {
+  background-color: var(--input-bg);
+  border: 1px solid var(--input-border);
+  border-radius: 24px;
+  color: var(--input-text);
+  font-size: 14px;
+  height: 40px;
+  padding: 0 16px;
+  transition: background-color 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.google-input:focus {
+  background-color: var(--input-focus-bg);
+  border-color: var(--input-focus-border);
+  box-shadow: 0 1px 2px 0 rgba(60, 64, 67, 0.3), 0 2px 6px 2px rgba(60, 64, 67, 0.15);
+  outline: none;
+}
+
+/* Material design shadows */
+.elevation-1 {
+  box-shadow: 0 1px 2px 0 rgba(60, 64, 67, 0.3), 0 1px 3px 1px rgba(60, 64, 67, 0.15);
+}
+
+.elevation-2 {
+  box-shadow: 0 1px 2px 0 rgba(60, 64, 67, 0.3), 0 2px 6px 2px rgba(60, 64, 67, 0.15);
+}
+
+.elevation-3 {
+  box-shadow: 0 1px 3px 0 rgba(60, 64, 67, 0.3), 0 4px 8px 3px rgba(60, 64, 67, 0.15);
+}
+
+/* Additional global styles if needed */
+.animate-pulse {
+  animation: pulse 1.5s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: .5;
+  }
+}
+
+/* Google rainbow gradient for special elements */
+.google-gradient {
+  background: linear-gradient(
+    to right,
+    var(--google-blue),
+    var(--google-red),
+    var(--google-yellow),
+    var(--google-green)
+  );
+}
+
+/* Google logo colors */
+.google-blue { color: var(--google-blue); }
+.google-red { color: var(--google-red); }
+.google-yellow { color: var(--google-yellow); }
+.google-green { color: var(--google-green); }
